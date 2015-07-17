@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0141EDC01B59A11A00DA840A /* TRVSAsynchronousOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0141EDBE1B59A11A00DA840A /* TRVSAsynchronousOperation.m */; };
 		0141EDC11B59A11A00DA840A /* TRVSAsynchronousOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0141EDBE1B59A11A00DA840A /* TRVSAsynchronousOperation.m */; };
+		0141EDC41B59A29C00DA840A /* TRVSURLSessionDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0141EDC31B59A29C00DA840A /* TRVSURLSessionDownloadOperation.m */; };
+		0141EDC51B59A29C00DA840A /* TRVSURLSessionDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0141EDC31B59A29C00DA840A /* TRVSURLSessionDownloadOperation.m */; };
 		322462F9194E9D1C008123A9 /* OS_X_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 322462F8194E9D1C008123A9 /* OS_X_Tests.m */; };
 		32802BEA1906C73A00957F10 /* TRVSURLSessionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D8098C190079B100000071 /* TRVSURLSessionOperation.m */; };
 		32D809931900B52400000071 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D8097B1900780800000071 /* XCTest.framework */; };
@@ -22,6 +24,8 @@
 		0141EDBD1B59A11A00DA840A /* TRVSAsynchronousOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRVSAsynchronousOperation.h; path = ../TRVSURLSessionOperation/TRVSAsynchronousOperation.h; sourceTree = "<group>"; };
 		0141EDBE1B59A11A00DA840A /* TRVSAsynchronousOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRVSAsynchronousOperation.m; path = ../TRVSURLSessionOperation/TRVSAsynchronousOperation.m; sourceTree = "<group>"; };
 		0141EDBF1B59A11A00DA840A /* TRVSAsynchronousOperation+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TRVSAsynchronousOperation+Subclass.h"; path = "../TRVSURLSessionOperation/TRVSAsynchronousOperation+Subclass.h"; sourceTree = "<group>"; };
+		0141EDC21B59A29C00DA840A /* TRVSURLSessionDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRVSURLSessionDownloadOperation.h; path = ../TRVSURLSessionOperation/TRVSURLSessionDownloadOperation.h; sourceTree = "<group>"; };
+		0141EDC31B59A29C00DA840A /* TRVSURLSessionDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRVSURLSessionDownloadOperation.m; path = ../TRVSURLSessionOperation/TRVSURLSessionDownloadOperation.m; sourceTree = "<group>"; };
 		322462F4194E9D1C008123A9 /* OS X Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OS X Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		322462F7194E9D1C008123A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		322462F8194E9D1C008123A9 /* OS_X_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OS_X_Tests.m; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				0141EDBF1B59A11A00DA840A /* TRVSAsynchronousOperation+Subclass.h */,
 				32D8098B190079B100000071 /* TRVSURLSessionOperation.h */,
 				32D8098C190079B100000071 /* TRVSURLSessionOperation.m */,
+				0141EDC21B59A29C00DA840A /* TRVSURLSessionDownloadOperation.h */,
+				0141EDC31B59A29C00DA840A /* TRVSURLSessionDownloadOperation.m */,
 			);
 			name = TRVSURLSessionOperation;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0141EDC51B59A29C00DA840A /* TRVSURLSessionDownloadOperation.m in Sources */,
 				0141EDC11B59A11A00DA840A /* TRVSAsynchronousOperation.m in Sources */,
 				322462F9194E9D1C008123A9 /* OS_X_Tests.m in Sources */,
 			);
@@ -261,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D8099F1900B52400000071 /* Tests.m in Sources */,
+				0141EDC41B59A29C00DA840A /* TRVSURLSessionDownloadOperation.m in Sources */,
 				32802BEA1906C73A00957F10 /* TRVSURLSessionOperation.m in Sources */,
 				0141EDC01B59A11A00DA840A /* TRVSAsynchronousOperation.m in Sources */,
 			);

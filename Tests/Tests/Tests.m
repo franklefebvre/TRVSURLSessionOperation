@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "TRVSURLSessionOperation.h"
+#import "TRVSURLSessionDownloadOperation.h"
 
 @interface Tests : XCTestCase
 
@@ -26,7 +27,7 @@
     _session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
 }
 
-- (void)test {
+- (void)testData {
     NSArray *urls = @[ [NSURL URLWithString:@"https://twitter.com/travisjeffery"], [NSURL URLWithString:@"https://github.com/travisjeffery"] ];
     NSMutableArray *result = [[NSMutableArray alloc] init];
 
@@ -41,6 +42,30 @@
 
     [_queue waitUntilAllOperationsAreFinished];
 
+    XCTAssertEqualObjects(urls, result);
+}
+
+- (void)testDownload {
+    NSArray *urls = @[ [NSURL URLWithString:@"https://twitter.com/travisjeffery"], [NSURL URLWithString:@"https://github.com/travisjeffery"] ];
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    
+    [_queue addOperation:[[TRVSURLSessionDownloadOperation alloc] initWithSession:_session request:[NSURLRequest requestWithURL:urls[0]] completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        XCTAssert(result.count == 0);
+        XCTAssertNotNil(location);
+        NSData *fileData = [NSData dataWithContentsOfURL:location];
+        XCTAssertTrue([fileData length] != 0);
+        [result addObject:response.URL];
+    }]];
+    
+    [_queue addOperation:[[TRVSURLSessionDownloadOperation alloc] initWithSession:_session URL:urls[1] completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        XCTAssertNotNil(location);
+        NSData *fileData = [NSData dataWithContentsOfURL:location];
+        XCTAssertTrue([fileData length] != 0);
+        [result addObject:response.URL];
+    }]];
+    
+    [_queue waitUntilAllOperationsAreFinished];
+    
     XCTAssertEqualObjects(urls, result);
 }
 
